@@ -14,7 +14,7 @@ export class AddUserCompanyComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router 
     ) { }
   isLoading = false;
 
