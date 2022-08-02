@@ -1,0 +1,111 @@
+<div class="app-home-user">
+    <div class="app-home-para">
+        <h1><span class="bold"> ADD</span> USER DATA</h1>
+    </div>
+    <div class="app-home-wrapper">
+        <div class="app-home-wrapper-inner">
+            <div class="app-home-wrapper-inner-pic">
+
+                <picture>
+                    <img src="assets/connect.png" alt="app-home-image">
+                </picture>
+            </div>
+            <form [formGroup]="userform" id="userWithUsForm">
+                <div class="app-home-wrapper-inner-user-details">
+                    <div class="app-home-wrapper-inner-user-details-input-box">
+                        <div class="form-group">
+                            <label for="firstName" class="required">First Name</label>
+                            <input formControlName="firstName" type="text"
+                                class="app-home-wrapper-inner-user-details-input-box-input" id="firstName">
+                            <small *ngIf="f['firstName'].touched && f['firstName'].invalid" class="text-danger"> First
+                                Name is Required</small>
+                        </div>
+                    </div>
+                    <div class="app-home-wrapper-inner-user-details-input-box">
+                        <div class="form-group">
+                            <label for="flname" class="required">Last Name</label>
+                            <input formControlName="lastName" type="text"
+                                class="app-home-wrapper-inner-user-details-input-box-input" id="lastName">
+                            <small *ngIf="f['lastName'].touched && f['lastName'].invalid" class="text-danger">Last Name
+                                is Required</small>
+                        </div>
+                    </div>
+                    <div class="app-home-wrapper-inner-user-details-input-box">
+                        <div class="form-group">
+                            <label for="cname" class="required">Company Name</label>
+                            <input formControlName="companyName" type="text"
+                                class="app-home-wrapper-inner-user-details-input-box-input" id="companyName">
+                            <small *ngIf="f['companyName'].touched && f['companyName'].invalid" class="text-danger">Company Name
+                                is Required</small>
+                        </div>
+                    </div>
+                    <div class="app-home-wrapper-inner-user-details-input-box">
+                        <div class="form-group">
+                            <label for="city" class="required">Company City</label>
+                            <input formControlName="companyCity" type="text"
+                                class="app-home-wrapper-inner-user-details-input-box-input" id="companyCity">
+                            <small *ngIf="f['companyCity'].touched && f['companyCity'].invalid" class="text-danger">Company City
+                                is Required</small>
+                        </div>
+                    </div>
+
+                    <div class="app-home-wrapper-inner-user-details-input-box">
+                        <div class="form-group">
+                            <label for="ftel" class="required"> Phone Number</label>
+
+                            <div class="app-home-wrapper-inner-user-details-input-box-select">
+
+                                <div class="app-home-wrapper-inner-user-details-input-box-select-dropdown">
+                                    <select name="format" class="format" id="format" formControlName="cCode">
+                                        <option selected value="91">+91</option>
+                                        <option value="93">+93</option>
+                                        <option value="90">+90</option>
+                                        <option value="56">+56</option>
+                                    </select>
+                                </div>
+                                <input formControlName="tel" type="tel"
+                                    class="app-home-wrapper-inner-user-details-input-box-select-phone">
+                            </div>
+                            <small *ngIf="f['tel'].touched && f['tel'].invalid" class="text-danger">Phone Number is
+                                Required</small>
+                        </div>
+                    </div>
+
+                    <div class="app-home-wrapper-inner-user-details-input-box">
+                        <div class="form-group">
+                            <label for="femail" class="required">Email Id</label>
+                            <input formControlName="emailID" type="email"
+                                class="app-home-wrapper-inner-user-details-input-box-input" id="emailID">
+                            <small *ngIf="f['emailID'].touched && f['emailID'].invalid" class="text-danger">Email is
+                                Required</small>
+                        </div>
+                    </div>
+                    <div class="app-home-wrapper-inner-user-detail-message">
+                        <div class="form-group" style="display: flex; flex-direction: column;">
+                            <label for="fmessage" class="required">Message</label>
+                            <textarea formControlName="message" type="text" id="message"
+                                class="app-home-wrapper-inner-user-details-message-usermessage"></textarea>
+                            <!-- <small *ngIf="f['message'].touched && f['message'].invalid" class="text-danger">Message is
+                                Required</small> -->
+                        </div>
+                    </div>
+                    <div class="app-home-wrapper-inner-user-detail-submit">
+                        <button (click)="clicksub()"
+                            class="app-home-wrapper-inner-user-details-submit-usersubmit white">Submit</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="alert-pop-up-container" *ngIf="submitResponseData">
+        <div class="alert-pop-up">
+            <h5>{{submitResponseData.statusCode == 200 ? 'Thank You' : 'Error'}}</h5>
+            <span>{{submitResponseData.message}}
+            </span>
+        </div>
+    </div>
+    <div class="loader-container" *ngIf="isLoading">
+        <div class="loader"></div>
+    </div>
+</div>

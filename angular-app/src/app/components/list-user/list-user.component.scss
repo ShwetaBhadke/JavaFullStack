@@ -1,0 +1,38 @@
+$light-blue: #1f7ae0;
+.list-user{
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    gap: 30px;
+    &-para {
+        text-align: center;
+        padding-bottom: 80px;
+
+        @media screen and (max-width: 1120px) {
+            padding-bottom: 28px;
+        }
+
+        .bold {
+            color: $light-blue;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+        }
+    }
+    &-container{
+        display: flex;
+        font-size: 16px;
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 100px;
+        justify-content: center;
+        box-shadow: -2px -2px 32px #00000005, 8px 16px 32px #0000000a;
+    }
+    &-button{
+        padding-top: 50px;
+        text-align: center;
+        border: none;
+        background:$light-blue;
+        color: white;
+        padding: 10px;
+    }
+}

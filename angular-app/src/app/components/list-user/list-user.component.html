@@ -1,0 +1,15 @@
+<div class="list-user">
+    <div class="list-user-para">
+        <h1><span class="bold">LIST</span> OF USERS</h1>
+    </div>
+    <div class="list-user-container" *ngFor="let item of user">
+        <p>{{item.UserId}}</p>
+        <p>{{item.emailID}}</p>
+        <p>{{item.Name}}</p>
+        <p>{{item.companyName}}</p>
+        <p>{{item.companyCity}}</p>
+        <p>{{item.mobileNumber}}</p>
+    </div>
+    <button (click)="goBack()" class="list-user-button">Back</button>
+
+</div>
